@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MessMate</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>MessMate</h1>
+    <p>Hostel Mess Menu and Feedback Tracker</p>
+</header>
+
+<main>
+
+    <section class="card">
+        <h2>Add Resident</h2>
+
+        <form id="residentForm">
+            <input id="residentName" type="text" placeholder="Resident name" required>
+            <input id="roomNumber" type="text" placeholder="Room number" required>
+            <button type="submit">Add Resident</button>
+        </form>
+    </section>
+
+    <section class="card">
+        <h2>Add Meal to Weekly Menu</h2>
+
+        <form id="mealForm">
+            <label>Week Start Date</label>
+            <input id="weekStartDate" type="date" required>
+
+            <label>Meal Date</label>
+            <input id="mealDate" type="date" required>
+
+            <label>Meal Type</label>
+            <select id="mealType" required>
+                <option value="BREAKFAST">Breakfast</option>
+                <option value="LUNCH">Lunch</option>
+                <option value="DINNER">Dinner</option>
+            </select>
+
+            <input id="foodName" type="text" placeholder="Food name" required>
+
+            <button type="submit">Add Meal</button>
+        </form>
+    </section>
+
+    <section class="card">
+        <h2>Submit Feedback</h2>
+
+        <form id="feedbackForm">
+            <input id="feedbackResidentId" type="number"
+                   placeholder="Resident ID" required>
+
+            <input id="feedbackMealId" type="number"
+                   placeholder="Meal ID" required>
+
+            <select id="rating" required>
+                <option value="">Select rating</option>
+                <option value="1">1 - Poor</option>
+                <option value="2">2 - Average</option>
+                <option value="3">3 - Good</option>
+                <option value="4">4 - Very Good</option>
+                <option value="5">5 - Excellent</option>
+            </select>
+
+            <textarea id="comment"
+                      placeholder="Comment"></textarea>
+
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </section>
+
+    <section class="card">
+        <h2>Meal Opt-Out</h2>
+
+        <form id="optOutForm">
+            <input id="optOutResidentId" type="number"
+                   placeholder="Resident ID" required>
+
+            <input id="optOutDate" type="date" required>
+
+            <button type="submit">Mark Opt-Out</button>
+        </form>
+    </section>
+
+    <section class="card">
+        <h2>Daily Headcount</h2>
+
+        <input id="headcountDate" type="date">
+        <button id="headcountButton">View Headcount</button>
+
+        <div id="headcountResult"></div>
+    </section>
+
+    <section class="card full-width">
+        <h2>All Residents</h2>
+
+        <button id="loadResidentsButton">Load Residents</button>
+        <div id="residentList"></div>
+    </section>
+
+    <section class="card full-width">
+        <h2>Response</h2>
+        <pre id="responseBox">Ready to use MessMate.</pre>
+    </section>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

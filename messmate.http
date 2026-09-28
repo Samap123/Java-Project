@@ -1,0 +1,88 @@
+### 1. Add resident
+POST http://localhost:8080/api/residents
+Content-Type: application/json
+
+{
+  "name": "Ajay",
+  "roomNumber": "A101"
+}
+
+###
+
+### 2. View all residents
+GET http://localhost:8080/api/residents
+
+###
+
+### 3. Create weekly menu
+POST http://localhost:8080/api/menu/week?weekStartDate=2026-09-28
+
+###
+
+### 4. Add breakfast meal
+POST http://localhost:8080/api/menu/meals
+Content-Type: application/json
+
+{
+  "weekStartDate": "2026-09-28",
+  "mealDate": "2026-09-29",
+  "mealType": "BREAKFAST",
+  "foodName": "Idli and Sambar"
+}
+
+###
+
+### 5. Add lunch meal
+POST http://localhost:8080/api/menu/meals
+Content-Type: application/json
+
+{
+  "weekStartDate": "2026-09-28",
+  "mealDate": "2026-09-29",
+  "mealType": "LUNCH",
+  "foodName": "Sambar Rice"
+}
+
+###
+
+### 6. View meals for one date
+GET http://localhost:8080/api/menu/meals/date/2026-09-29
+
+###
+
+### 7. Submit feedback
+POST http://localhost:8080/api/feedback
+Content-Type: application/json
+
+{
+  "residentId": 1,
+  "mealId": 1,
+  "rating": 4,
+  "comment": "Food was good"
+}
+
+###
+
+### 8. Get meal average rating
+GET http://localhost:8080/api/feedback/meal/1/average
+
+###
+
+### 9. Resident opt-out for one date
+POST http://localhost:8080/api/residents/opt-out
+Content-Type: application/json
+
+{
+  "residentId": 1,
+  "optOutDate": "2026-09-30"
+}
+
+###
+
+### 10. Get daily headcount
+GET http://localhost:8080/api/dashboard/headcount?date=2026-09-30
+
+###
+
+### 11. Get low-rated meals for week
+GET http://localhost:8080/api/dashboard/low-rated?weekStartDate=2026-09-28
